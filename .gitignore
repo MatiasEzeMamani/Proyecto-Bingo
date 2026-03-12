@@ -1,0 +1,25 @@
+# Java / Maven
+target/
+*.jar
+*.war
+
+# Node / React
+node_modules/
+dist/
+.eslintcache
+
+# IDEs (Eclipse, STS, VS Code)
+.metadata/
+.project
+.classpath
+.settings/
+.vscode/
+bin/
+
+# Docker & DB
+db_data/
+.env
+
+# Sistema
+.DS_Store
+Thumbs.db
