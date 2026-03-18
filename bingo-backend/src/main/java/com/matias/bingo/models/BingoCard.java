@@ -1,6 +1,10 @@
 package com.matias.bingo.models;
 
+import java.time.LocalDateTime;
 import java.util.List;
+
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import jakarta.persistence.CollectionTable;
 import jakarta.persistence.Column;
@@ -12,6 +16,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OrderColumn;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -35,5 +40,13 @@ public class BingoCard {
 	@ElementCollection
     @CollectionTable(name = "card_numbers", joinColumns = @JoinColumn(name = "card_id"))
     @Column(name = "number")
+    @OrderColumn(name = "position")
     private List<Integer> numbers;
+	
+	@CreationTimestamp
+	@Column(updatable = false)
+	private LocalDateTime createdAt;
+
+	@UpdateTimestamp
+	private LocalDateTime updatedAt;
 }
