@@ -1,6 +1,7 @@
 package com.matias.bingo.models;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -31,6 +32,9 @@ public class Game {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 	
+	@Column(nullable = false)
+    private String name;
+	
 	@Enumerated(EnumType.STRING)
 	private Status status = Status.WAITING;
 	
@@ -41,6 +45,9 @@ public class Game {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "winner_id")
 	private User winner;
+	
+	@OneToMany(mappedBy = "game", cascade = CascadeType.ALL)
+    private List<BingoCard> cards = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "game", cascade = CascadeType.ALL, orphanRemoval = true)
 	@OrderBy("drawnAt ASC")
