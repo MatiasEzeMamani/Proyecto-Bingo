@@ -35,28 +35,30 @@ import lombok.Data;
 @Table(name = "users")
 public class User implements UserDetails {
 	
+	private static final long serialVersionUID = 1L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@NotEmpty(message = "Coloque su nombre")
-	@Size(min = 3, message = "El nombre debe contener más de 3 caracteres.")
-	private String name;
+	@NotEmpty(message = "Please enter your name")
+    @Size(min = 3, message = "The name must be at least 3 characters long.")
+    private String name;
 	
 	@Column(nullable = false, unique = true)
-	@NotEmpty(message = "Coloque su Email")
-	@Email(message = "Email inválido")
-	private String email;
+    @NotEmpty(message = "Please enter your email")
+    @Email(message = "Invalid email format")
+    private String email;
 
-	@NotEmpty(message = "Coloque su contraseña")
-	@Size(min = 6, message = "La contraseña necesita al menos 6 caracteres.")
-	@JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-	private String password;
-	
-	@Transient
-	@Size(min = 6, message = "La contraseña necesita al menos 6 caracteres.")
-	@JsonIgnore
-	private String confirmPassword;
+    @NotEmpty(message = "Please enter your password")
+    @Size(min = 6, message = "The password must be at least 6 characters long.")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
+    private String password;
+    
+    @Transient
+    @Size(min = 6, message = "The password must be at least 6 characters long.")
+    @JsonIgnore
+    private String confirmPassword;
 	
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false)

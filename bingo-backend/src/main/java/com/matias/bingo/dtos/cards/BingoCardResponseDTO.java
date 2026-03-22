@@ -10,8 +10,9 @@ import lombok.Data;
 public class BingoCardResponseDTO {
     
 	private Long id;
-    private List<Integer> numbers;
+	private List<Integer> numbers;
+    private List<Integer> markedNumbers;
     private UserResponseDTO owner; 
     private Boolean isWinner;
-    
+    private int penaltyTurns;
 }

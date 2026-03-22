@@ -35,6 +35,7 @@ public class Response {
     private List<BingoCardResponseDTO> cards;
     
     private Integer drawnBall;
+    private List<Integer> drawnBalls;
     
     public Response(int statusCode, String message) {
         this.statusCode = statusCode;

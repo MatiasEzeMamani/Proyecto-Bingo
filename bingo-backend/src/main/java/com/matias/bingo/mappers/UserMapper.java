@@ -12,7 +12,7 @@ import com.matias.bingo.dtos.users.UserResponseDTO;
 import com.matias.bingo.dtos.users.UserUpdateDTO;
 import com.matias.bingo.models.User;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = org.mapstruct.ReportingPolicy.IGNORE)
 public abstract class UserMapper {
 	
 	public User toEntity(UserRegistrationDTO dto) {
