@@ -1,16 +1,15 @@
 import axios from 'axios';
 
 const axiosInstance = axios.create({
-    baseURL: 'http://localhost:8080', // La URL de tu Spring Boot
+    baseURL: 'http://localhost:8080/api/v1',
     timeout: 5000,
     headers: {
         'Content-Type': 'application/json',
     },
 });
 
-// Esto será clave cuando implementes el JWT
 axiosInstance.interceptors.request.use((config) => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('accessToken');
     if (token) {
         config.headers.Authorization = `Bearer ${token}`;
     }

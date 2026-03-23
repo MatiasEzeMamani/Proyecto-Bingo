@@ -1,0 +1,20 @@
+{
+  "auth": {
+    "login_title": "BINGO!",
+    "register_title": "CREATE ACCOUNT",
+    "email": "Email Address",
+    "password": "Password",
+    "confirm_password": "Confirm Password",
+    "full_name": "Full Name",
+    "login_btn": "LOGIN",
+    "logging_in": "Logging in...",
+    "register_btn": "REGISTER",
+    "registering": "Registering...",
+    "no_account": "Don't have an account?",
+    "have_account": "Already have an account?",
+    "register_link": "Register here",
+    "login_link": "Login here",
+    "error_fields": "Please fill in all fields.",
+    "error_match": "Passwords do not match."
+  }
+}

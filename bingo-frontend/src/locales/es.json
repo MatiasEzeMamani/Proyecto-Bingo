@@ -1,0 +1,20 @@
+{
+  "auth": {
+    "login_title": "¡BINGO!",
+    "register_title": "CREAR CUENTA",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "confirm_password": "Confirmar contraseña",
+    "full_name": "Nombre completo",
+    "login_btn": "INICIAR SESIÓN",
+    "logging_in": "Entrando...",
+    "register_btn": "REGISTRARME",
+    "registering": "Registrando...",
+    "no_account": "¿No tenés cuenta?",
+    "have_account": "¿Ya tenés cuenta?",
+    "register_link": "Registrate acá",
+    "login_link": "Inicia sesión",
+    "error_fields": "Completá todos los campos.",
+    "error_match": "Las contraseñas no coinciden."
+  }
+}
